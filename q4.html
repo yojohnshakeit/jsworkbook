@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q4-</title>
+</head>    
+<body>
+    <h1>Q4</h1>
+    ある1つの引数を取る関数を作って下さい。<br> 数字の1から25のうち、引数の倍数だけを出力するプログラムを作成します。 <br>ただし、引数が25より大きい場合は、そのまま数字を出力して下さい。 <br>以下の出力になります。
+        <br> modulus(5) 5 10 15 20 25
+        <br>modulus(7) 7 14 21 
+        <br>modulus(26) 26  
+        <br>コードの最初はこのような感じです。
+        <br>function modulus(num){
+    <h3>answer</h3>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            ele.innerHTML ="";
+            function modulus(num){
+                if(num<=25){
+                    for(let i = 0;i<=25;i++){
+                        if(i % num ===0){
+                            ele.innerHTML +=`${i} ,`; 
+                        }
+                    } 
+                } else { 
+                    ele.innerHTHML += num;
+            }
+            }   
+            
+            ele.innerHTML += "modulus(7)";
+            modulus(7);
+            
+        })
+    </script>
+</body>
+</html>
