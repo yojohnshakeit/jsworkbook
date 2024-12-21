@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <tilte>jsworkbook -q1-</tilte>
+</head>
+<body>
+    <h1>Q1</h1>
+    <h3>演習1（四則演算） 数字の2、3、10、10000を使って、以下の出力になるように四則演算をおこなってください。 <br>
+        10 + 3 = 13 <br>
+        10 - 3 = 7 <br>
+        10 × 3 = 30 <br>
+        10000 ÷ 10 = 1000<br>
+        10 ÷ 3 = 3.3333333333333335 余り 1<br> 
+        10 / 3 = 3 余り 1 <br>
+        2の2乗 = 4 <br>
+        2の3乗 = 8  <br>
+        コードの最初はこのような感じです（他に方法があれば、それでも大丈夫です）。<br> 
+    let number_1 = 10; <br>
+    let number_2 = 3; <br>
+    let number_3 = 2; <br>
+    let number_4 = 10000;<br>
+    </h3>
+    <h2>answer</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+        let number_1 = 10;
+        let number_2 = 3;
+        let number_3 = 2;
+        let number_4 = 10000;
+        let ele = document.getElementsByTagName("output")[0];
+        ele.innerHTML = `${number_1}+${number_2} = ${number_1+number_2}`;
+        ele.innerHTML += `<br> ${number_1}-${number_2} = ${number_1-number_2}`;
+        ele.innerHTML += `<br> ${number_1}x${number_2} = ${number_1*number_2}`;
+        ele.innerHTML +=`<br> ${number_4}÷${number_1}=${number_4/number_1}`;
+        ele.innerHTML += `<br> ${number_1} ÷${number_2} = ${(number_1/number_2)}`;
+        ele.innerHTML+=`<br> ${number_1}/${number_2}= ${Math.floor(number_1/number_2)}   
+        余り ${number_1 %number_2}`;
+        ele.innerHTML +=`<br> ${number_3}の２乗= ${Math.pow(2,2)}`;
+        ele.innerHTML +=`<br> ${number_3}の３乗= ${Math.pow(2,3)}`;
+        });
+        
+    </script>
+</body>
+</html>
