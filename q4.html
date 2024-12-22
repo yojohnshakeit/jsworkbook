@@ -21,18 +21,21 @@
             ele.innerHTML ="";
             function modulus(num){
                 if(num<=25){
-                    for(let i = 0;i<=25;i++){
+                    for(let i = 1;i<=25;i++){
                         if(i % num ===0){
-                            ele.innerHTML +=`${i} ,`; 
+                            ele.innerHTML +=` ${i} ,`; 
                         }
                     } 
                 } else { 
-                    ele.innerHTHML += num;
+                    ele.innerHTML += " " + num;
             }
             }   
-            
-            ele.innerHTML += "modulus(7)";
+            ele.innerHTML += "modulus(5)"
+            modulus(5);
+            ele.innerHTML += "<br> modulus(7)";
             modulus(7);
+            ele.innerHTML += "<br> modulus(26)";
+            modulus(26);
             
         })
     </script>
