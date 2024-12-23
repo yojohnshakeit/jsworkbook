@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q6-</title>
+</head>
+<body>
+    <h1>Q6</h1>
+    <span>
+        ある1つの引数を取る関数を作って下さい。<br> そして、以下の条件に従って、値を出力して下さい。<br> 対象の数字が、3の倍数のとき「Fizz」<br> 対象の数字が、5の倍数のとき「Buzz」<br> 対象の数字が、15の倍数のとき「FizzBuzz」 <br> 対象の数字が、それ以外の場合は、「Nothing」  <br> コードの最初はこのような感じです。 function fizzBuzz(n) {
+    </span>
+    <h2>---answer---</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            function fizzBuzz(num){
+                if (num%15 ===0){
+                    let message= "FizzBuzz"
+                    return message;
+                } else if (num% 3===0){
+                    message = "Fizz";
+                    return message
+                } else if (num %5===0){
+                    message="Buzz";
+                    return message;
+                } else {
+                    message = "Nothing";
+                    return message;
+                }
+            }
+            
+            let message;
+            ele.innerHTML ="";
+            message = fizzBuzz(6);
+            ele.innerHTML += "<br>" +message;
+            message = fizzBuzz(10);
+            ele.innerHTML += "<br>" +message;
+            message = fizzBuzz(15);
+            ele.innerHTML += "<br>" +message;
+            message = fizzBuzz(16);
+            ele.innerHTML += "<br>" +message;
+            
+        })
+    </script>
+</body>
+</html>
