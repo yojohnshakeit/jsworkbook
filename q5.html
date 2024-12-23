@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q5-</title>
+</head>
+<body>
+    <h1>Q5</h1>
+    <span>
+        ある1つの引数を取る関数を作って下さい。<br>
+        20未満の数字ならば「NG」、20以上の数字ならば「OK」という文字列を返して下さい。<br> その戻り値を使って、「あなたの場合は、お酒は〇〇です」という文字列を出力して下さい。<br> 関数の引数に20を入れた場合は、以下の出力になります。<br> コードの最初はこのような感じです。 
+        <br>function checkAlcohol
+        <br> If(age){ ....
+    </span>
+    <h2>--answer--</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            ele.innerHTML ="";
+            let message = "";
+           /* function checkAlcohol (age){
+                if (age>=20){
+                    message = "OK"
+                } else {
+                    message = "NG";
+                }
+                return message;
+            } */
+            function checkAlcohol(age){
+                let message = age>19 ? 'OK': 'NG'; 
+                return message;
+            }
+            let age = 19;
+            message = checkAlcohol(age);
+            ele.innerHTML += `あなたは${age}歳です。お酒は${message}です`;
+            age = 20;
+            message = checkAlcohol(age)
+            ele.innerHTML += `<br>あなたは${age}歳です。お酒は${message}です`;
+        })
+    </script>
+</body>
+</html>
