@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q8-</title>
+</head>    
+<body>
+    <h1>Q8</h1>
+    <span>
+    ある2つの引数を取る関数を作って下さい。 <br>
+    一つ目の引数は数字で、二つ目の引数には文字列を入れて下さい。
+    <br> そして、以下の条件に従って、値を出力して下さい。
+    <br> 文字列が「japan」の場合<br>
+    対象の数字が、3、4、5のとき「春」<br> 
+    対象の数字が、6、7、8のとき「夏」<br>
+    対象の数字が、9、10、11のとき「秋」<br> 対象の数字が、12、1、2のとき「冬」<br> 対象の数字が、それ意外の場合は、「季節不明」 <br>
+    <br>文字列が「ph」の場合<br> 対象の数字が、6から11のとき「雨季」<br> 対象の数字が、1から5、12のとき「乾季」<br> 対象の数字が、それ意外の場合は、「季節不明」<br>
+    </span>
+    <h2>---answer---</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            ele.innerHTML="";
+            function showSeason(country, month){
+                if (country ==="japan"){
+                    switch(month){
+                        case 3:
+                        case 4:
+                        case 5: ele.innerHTML += "<br>春";break;
+                        case 6:
+                        case 7:
+                        case 8: ele.innerHTML+= "<br>夏";break;
+                        case 9:
+                        case 10:
+                        case 11: ele.innerHTML+= "<br>秋";break;
+                        case 12:
+                        case 1:
+                        case 2: ele.innerHTML+= "<br>冬";break;
+                        default: ele.innerHTML+= "<br>季節不明"
+                    }
+                    
+                }
+                if (country ==="ph"){
+                    switch(month){
+                        case 6:
+                        case 7:
+                        case 8: 
+                        case 9:
+                        case 10:
+                        case 11: ele.innerHTML+= "<br>雨季";break;
+                        case 12:
+                        case 1:
+                        case 2: 
+                        case 3:
+                        case 4:
+                        case 5: ele.innerHTML+= "<br>乾季";break;
+                        default: ele.innerHTML+= "<br>季節不明"
+                    }
+                }
+            }
+            showSeason("japan", 3);
+            showSeason("japan", 7);
+            showSeason("japan", 10);
+            showSeason("japan", 1);
+            showSeason("japan", 13);
+            
+            showSeason("ph", 3);
+            showSeason("ph", 7);
+            showSeason("ph", 13);
+        })
+    </script>
+</body>
+</html>
