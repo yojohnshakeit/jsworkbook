@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q10-</title>
+</head>    
+<body>
+    <h1>Q10</h1>
+    <span>
+        ある1つの引数を取る関数を作って下さい。<br> そして、1以上の整数aを関数に渡したら、<br>
+        a + aaaを返すプログラムを作成してください。<br> 関数の引数に値を入れた場合は、以下の出力になります。<br>
+        console.log(cal(3));<br>
+        console.log(cal(4)); // 336 // 448<br>  コードの最初はこのような感じです。<br>
+        function cal(number) {
+    </span>
+    <h2>---answer---</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            function cal(number){
+                return number +parseInt(String(number).repeat(3));
+            }
+            ele.innerHTML = "cal(3): " +cal(3) ;
+            ele.innerHTML += "<br>cal(4): " +cal(4);
+        });
+    </script>
+</body>
+</html>
