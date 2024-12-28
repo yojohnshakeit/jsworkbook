@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q9-</title>
+</head>    
+<body>
+    <h1>Q9</h1>
+    <span>
+        ある2つの引数を取る関数を作って下さい。<br> 一つ目の引数は身長で、二つ目の引数には体重を入れて下さい。<br> そしてBMIを計算して、出力して下さい。 <br>BMI = 体重kg ÷ (身長m)^2 <br>^2は「2乗」を意味します<br> 注；kgとメートルを計算する時には、メートルを100で割ってから計算して下さい。<br>
+    </span>
+    <form>
+        <div>
+        <label for ="height">身長</label>
+        <input type="text" id="height" value="170">
+        </div>
+        <div>
+        <label for ="weight">体重</label>
+        <input type="text" id="weight" value="70">
+        </div>
+        <button id ="bmiCalc">計算</button>
+    </form>
+    
+    <h2>---answer---</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            let myHeight = document.getElementById("height").value;
+            let myWeight = document.getElementById("weight").value;
+            function bmi(height, weight){
+                return weight/(height/100)/(height/100);
+            }
+            let myBmi = bmi(myHeight,myWeight).toFixed(1);
+            document.addEventListener("click", (evt)=>{
+                ele.innerHTML = "身長: " +myHeight+ "cm, 体重: " +myWeight+ "kg, BMI: " + myBmi;
+                evt.preventDefault();
+                //evt.stopPropagation();
+            });    
+        });
+        
+    </script>
+</body>
+</html>
