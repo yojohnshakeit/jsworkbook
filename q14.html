@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q14-</title>
+</head>
+<body>
+    <h1>Q14</h1>
+    <span>
+        ある２つの文字列<br>
+        s1 = 'rubyab' <>br>s2 = 'railsb'<br>を引数にとる関数をつくってください。<br>
+        ２つの文字列を比較して、同じ値があれば、それを配列にして<br>
+        返してください。
+    </span>
+    <h2>---answer---</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            let s1 = 'rubyab';
+            let s2 = 'railsb';
+            let answer = compareString(s1,s2);
+            ele.innerHTML =answer;
+            
+            function compareString(str1, str2){
+                let subjectArray1 = str1.split('');
+                let subjectArray2= str2.split('');
+                let repetitionArray=[];
+                for(var str of subjectArray1){
+                    if(subjectArray2.includes(str)){
+                        if(!repetitionArray.includes(str)){
+                        repetitionArray.push(str);
+                        }
+                    }
+                }
+                return repetitionArray.join();
+            }
+        })
+    </script>
+</body>
+</html>

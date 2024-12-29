@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q12-</title>
+</head>    
+<body>
+    <h1>Q12</h1>
+    <span>
+        ある1つの引数を取る関数を作って下さい。<br> ある文字列を入力したら、文字列の長さを表示する<br>プログラムを作成してください。<br> 関数の引数に値を入れた場合は、以下の出力になります。<br>
+        console.log(stringLength('aaaa'));<br>
+        console.log(stringLength('鬼滅の刃です')); // 4 // 6
+        <br>コードの最初はこのような感じです。 <br>
+        function stringLength(value) {
+    </span>
+    <h2>---answer---</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load",()=>{
+            let ele  = document.getElementsByTagName("output")[0];
+            function stringLength(string){
+                return string.length;
+            }
+            ele.innerHTML = 'stringLength("aaaa")=' +stringLength("aaaa");
+            ele.innerHTML += '<br> stringLength("鬼滅の刃です")= '+stringLength("鬼滅の刃です");
+        })
+    </script>
+</body>
+</html>
