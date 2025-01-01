@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jsworkbook -q16-</title>
+</head>
+<body>
+    <h1>Q16</h1>
+    <span>
+        ある２つの配列を引数にとる関数をつくってください。<br>
+        ２つの関数を比較して、同じ値があれば、それを配列にして返してください。<br>
+        let array1 = ["banana", "apple", "orange"];<br>
+        let array2 = ["mango", "banana", "apple"];<br>
+        let array3 = ["banana", "apple", "orange"];<br>
+        let array4 = ["mango", "banana", "melon"];<br>
+    </span>
+    <h2>---answer---</h2>
+    <output></output>
+    <script>
+        window.addEventListener("load", ()=>{
+            let ele = document.getElementsByTagName("output")[0];
+            let array1 = ["banana", "apple", "orange"];
+            let array2 = ["mango", "banana", "apple"];
+            let array3 = ["banana", "apple", "orange"];
+            let array4 = ["mango", "banana", "melon"];
+            let myArray1 = new Set(array1);
+            let myArray2 = new Set(array2);
+            let myArray3 = new Set(array3);
+            let myArray4 = new Set(array4);
+            let commonArray1=[];
+            let commonArray2=[];
+            for (let myele of myArray1){
+                if([...myArray2].includes(myele)){
+                    commonArray1.push(myele);
+                }            
+            }
+            ele.innerHTML = commonArray1;
+            for (let myele of myArray3){
+                if ([...myArray4].includes(myele)){
+                    commonArray2.push(myele);
+                }
+            }
+            ele.innerHTML+= "<br>" +commonArray2;
+        })
+    </script>
+</body>
+</html>
