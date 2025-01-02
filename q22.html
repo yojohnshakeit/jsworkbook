@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q22-</title>
+    </head>
+    <body>
+        <h1>Q22</h1>
+        <span>
+            以下の配列が対象です。  <br> 
+            let languages = ["ruby", "php", "python", "javascript"]; <br>
+            格納されている文字列が、短いものから順番に並べるプログラムを <br>
+            作成してください。 <br>
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load",()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                let languages = ["ruby", "php", "python", "javascript"];
+                let languages2 = languages.sort((v1,v2)=>v1.length-v2.length);
+                ele.innerHTML =languages2;
+            })
+        </script>
+    </body>
+</html>
