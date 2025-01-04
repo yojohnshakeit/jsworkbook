@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q29-</title>
+    </head>
+    <body>
+        <h1>Q29</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let values = ["Ms.Tanaka", "Mr.Suzuki", "Ms.Akagi", "Mrs.Yoko", "Ms.Yoshiki"]; <br>
+            ・この配列の値から、先頭が「Ms.」の値だけを取り出して、 <br>配列にして
+            返してください。 <br>
+            ・この配列の値から、行末が「ki」の値だけを取り出して、 <br>配列にして返してください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                let values = ["Ms.Tanaka", "Mr.Suzuki", "Ms.Akagi", "Mrs.Yoko", "Ms.Yoshiki"];
+                let myValues1 = values.filter(value=>value.startsWith("Ms."));
+                let myValues2 = values.filter(value=>value.endsWith("ki"));
+                ele.innerHTML = myValues1;
+                ele.innerHTML += "<br>" +myValues2;
+            })
+        </script>
+    </body>
+</html>
