@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q36-</title>
+    </head>
+    <body>
+        <h1>Q36</h1>
+        <span>
+            以下のMapが対象です。 <br>
+            let human = new Map([["name", "Taro"], ["age", 20], ["height",180],["weight", 60]]);  <br>
+            ・このMapに対して、’nick_name' というキーと’Ace'というバリューを
+            追加してください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML ="";
+                let human = new Map([["name", "Taro"], ["age", 20], ["height",180],["weight", 60]]);
+                human.set("nick_name", "Ace");
+                
+                    for(let [key,value] of human.entries()){
+                        ele.innerHTML +=`${key}:${value} <br>`;
+                    }
+                
+            })
+        </script>
+    </body>
+</html>

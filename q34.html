@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q34-</title>
+    </head>
+    <body>
+        <h1>Q34</h1>
+        <span> ２つの配列でどちらか一方にある要素を、  <br>
+            「Set」「配列」の２つで出力してください。 <br>
+            let listBox1 = [1,2,3,4,5,8,9]; <br>
+            let listBox2 = [9,7,6,5,4]; <br>
+            </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele= document.getElementsByTagName("output")[0];
+                let listBox1 = [1,2,3,4,5,8,9];
+                let listBox2 = [9,7,6,5,4];
+                let mySet1 = new Set(listBox1);
+                let mySet2 = new Set(listBox2);
+                for (let val of mySet2){
+                    if(mySet1.has(val)){
+                        mySet1.delete(val);
+                    } else 
+                    {
+                        mySet1.add(val);
+                    }
+                }
+                ele.innerHTML= [...mySet1];
+            });
+        </script>
+    </body>
+</html>
