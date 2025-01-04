@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q25-</title>
+    </head>
+    <body>
+        <h1>Q25</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let numbers1 = [1,2,3,4,5,8,9,10,18,20];  <br>
+            let numbers2 = [1,2,3,4,5,8,10,20];  <br>
+            以下の処理をしたプログラムを作成してください。  <br>
+            ・上記の配列にたいして、９の倍数がある場合は、trueを表示してください。 <br>
+            ・上記の配列にたいして、９の倍数がない場合は、falseを表示してください。 <br>
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                let numbers1 = [1,2,3,4,5,8,9,10,18,20]; 
+                let numbers2 = [1,2,3,4,5,8,10,20]; 
+                function divide9(array){
+                    if(array.some(ele=>ele%9==0)){
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+                ele.innerHTML =divide9(numbers1);
+                ele.innerHTML += "<br>"+ divide9(numbers2);
+            })
+        </script>
+    </body>
+</html>

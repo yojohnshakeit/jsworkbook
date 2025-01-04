@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q24-</title>
+    </head>
+    <body>
+        <h1>Q24</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let numbers1 = [1,2,3,4,5,8,9,10,18,20]; <br>
+            let numbers2 = [1,2,3,4,5,8,10,20]; <br>
+            以下の処理をしたプログラムを作成してください。 <br>
+            ・上記配列に対して、９の倍数がある場合は、最初に <br>見つけた値を表示してください。 <br>
+            ・上記配列に対して、９の倍数がない場合は０を <br>表示してください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                let numbers1 = [1,2,3,4,5,8,9,10,18,20]; 
+                let numbers2 = [1,2,3,4,5,8,10,20]; 
+                function divide9 (array){
+                    let ans = 0;
+                    for (let ele of array){
+                        if(ele %9===0 ) {
+                            ans = ele;
+                            break;
+                        }
+                    }
+                        return ans;
+                    }
+                ele.innerHTML = divide9(numbers1);
+                ele.innerHTML += "<br>"+divide9(numbers2);
+            })
+        </script>
+    </body>
+</html>

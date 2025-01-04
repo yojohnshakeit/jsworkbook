@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q26-</title>
+    </head>
+    <body>
+        <h1>Q26</h1>
+        <span>
+        1から30までの数字を使って、要素数が１０の配列をランダムに作成してください。 <br>
+        ただし、その配列には必ず１１の倍数が含まれるようにしてください。 <br>
+        コードの最初はこのような感じです。 <br>
+        let intBoxes = [];  <br>
+        while(true) { ....  <br>
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                let intBoxes = [];
+                while(true){
+                    for(let i=0;i<10;i++){
+                        intBoxes.push(Math.floor(Math.random()*30+1));
+                    }
+                    if (intBoxes.some(ele=>ele%11===0)){
+                        ele.innerHTML = intBoxes;
+                        return;
+                    } else {
+                        intBoxes =[];
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

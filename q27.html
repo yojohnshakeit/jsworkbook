@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q27-</title>
+        
+    </head>
+    <body>
+        <h1>Q27</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let values  = [1,"a", 2,"b", "c", 3];  <br>
+            この配列からnumber だけを取り出してください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                let values  = [1,"a", 2,"b", "c", 3];
+                //let numbers = values.filter(value=>!isNaN(value));
+                let numbers =values.filter(value =>typeof(value)==="number");
+                ele.innerHTML = numbers;
+            })
+        </script>
+    </body>
+</html>
