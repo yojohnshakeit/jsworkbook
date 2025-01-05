@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q39-</title>
+    </head>
+    <body>
+        <h1>Q39_2</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let people = [{"name":"Taro1", "age":20, "height":180, "weight":60, "country":"Japan"},
+             <br>{"name":"Taro2", "age":30,"height":170, "weight":65}, 
+             <br> {"name":"Taro3", "age":40, "height":160, "weight":70, "country":"Taiwan"}, 
+              <br>{"name": "Taro4", "age":50, "height":150, "weight":75, "country":"Japan"}]; <br>
+              ・この配列の中にあるオブジェクトの中から、keyが"country"で、valueが”Japan"のオブジェクトだけを取り出してください。 <br>
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+        
+            window.addEventListener("load", ()=>{
+        
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML ="";
+        
+            let people = [{"name":"Taro1", "age":20, "height":180, "weight":60, "country":"Japan"},{"name":"Taro2", "age":30,"height":170, "weight":65}, {"name":"Taro3", "age":40, "height":160, "weight":70, "country":"Taiwan"}, {"name": "Taro4", "age":50, "height":150, "weight":75, "country":"Japan"}];
+                 
+                 let myPeople = [];
+                 for(let person of people){
+                     myPeople =people.filter(person=>person["country"]==="Japan")  //or person.country ==="Japan"
+                }
+                 for(let man of myPeople){
+                     for(let [key, value] of Object.entries(man)){
+                          ele.innerHTML+=`${key}:${value}<br>`;       
+                     }
+                 }
+                 
+            })
+        </script>
+    </body>
+</html>

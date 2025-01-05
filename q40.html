@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q40-</title>
+    </head>
+    <body>
+        <h1>Q40</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let people = [{"name":"Taro1", "age":20, "height":180, "weight":60, "country":"Japan"},
+             <br>{"name":"Taro2", "age":30,"height":170, "weight":65}, 
+             <br> {"name":"Taro3", "age":40, "height":160, "weight":70, "country":"Taiwan"}, 
+              <br>{"name": "Taro4", "age":50, "height":150, "weight":75, "country":"Japan"}]; <br>
+              ・この配列の中にあるMapの中から、ageのvalueが３０より大きいMapだけを取りだしてください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML = "";
+                let people1 = new Map([["name","Taro1"],["age",20],["height",180], ["weight",60], ["country","Japan"]]);
+                let people2 = new Map([["name","Taro2"], ["age",30],["height",170], ["weight",65]]);
+                let people3 = new Map([["name","Taro3"], ["age",40], ["height",160], ["weight",70], ["country","Taiwan"]]);
+                let people4 = new Map([["name","Taro4"],["age",50], ["height",150], ["weight",75],["country","Japan"]]);
+                 let listedPeople = [];
+                 listedPeople.push(people1);
+                 listedPeople.push(people2);
+                 listedPeople.push(people3);
+                 listedPeople.push(people4);
+                
+                 let myPeople = [];
+                 for(let person of listedPeople){
+                     //myPeople = listedPeople.filter(person=>person.get("age")>30);   =>こちらも正解
+                     if(person.get("age")>30){       
+                       myPeople.push(person);
+                     }
+                 }
+                 for(let person of myPeople){
+                     for(let [key ,value] of person.entries()){
+                         ele.innerHTML += `${key}: ${value} <br>`
+                     }
+                 }
+            });
+        </script>
+    </body>
+</html>
