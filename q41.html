@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q41-</title>
+    </head>
+    <body>
+        <h1>Q41</h1>
+        <span>    以下の配列が対象です。 <br>
+            let people = [{"name":"Taro1", "age":20, "height":180, "weight":60, "country":"Japan"},
+             <br>{"name":"Taro2", "age":30,"height":170, "weight":65}, 
+             <br> {"name":"Taro3", "age":40, "height":160, "weight":70, "country":"Taiwan"}, 
+              <br>{"name": "Taro4", "age":50, "height":150, "weight":75, "country":"Japan"}
+              <br>{"name": "Taro5", "age":60, "height":160, "weight":75,"country":"Japan"},
+              <br>{"name": "Taro6", "age":50, "height":150, "weight":75,
+              "country":"Japan"},]; <br>
+              ・この配列の中身を、heightが小さい順、次にheightが同じ場合は、
+              年齢が大きい順に並べてください。
+              </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML = "";
+                let m1 =new Map([["name","Taro1"],["age",20],["height",180], ["weight",60],["country","Japan"]]);
+                let m2 = new Map([["name","Taro2"],["age",30],["height",170], ["weight",65]]);
+                let m3 = new Map([["name","Taro3"],["age",40],["height",160], ["weight",70],["country","Taiwan"]]);
+                let m4 = new Map([["name","Taro4"],["age",20],["height",160], ["weight",75],["country","Japan"]]);
+                let m5 = new Map([["name","Taro5"],["age",60],["height",160], ["weight",75],["country","Japan"]]);
+                let m6 = new Map([["name","Taro6"],["age",50],["height",150], ["weight",75],["country","Japan"]]);
+                let listedPeople = [];
+                listedPeople.push(m1);
+                listedPeople.push(m2);
+                listedPeople.push(m3);
+                listedPeople.push(m4);
+                listedPeople.push(m5);
+                listedPeople.push(m6);
+                let sortedPeople = [];
+                for(let person of listedPeople){
+                    listedPeople.sort(function(v1,v2){
+                        if(v1.get("height")==v2.get("height")){
+                            return v2.get("age")- v1.get("age")}
+                            else {
+                            return v1.get("height")-v2.get("height")
+                            }
+                })
+                };
+                for(let person of listedPeople){
+                    for(let [key, value] of person.entries()){
+                        ele.innerHTML += `${key} : ${value} <br>`;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
