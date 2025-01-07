@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q46-</title>
+    </head>
+    <body>
+        <h1>Q46</h1>
+        <span>
+            DateTimeクラスを利用して、昨日、今日、明日の日付を <br>
+            以下のようなフォーマットで表示してください。 <br>
+            "2022-03-22" <br>
+            "2022-03-23" <br>
+            "2022-03-24" <br>
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML ="";
+                let today = new Date();
+                ele.innerHTML+= "今日は、" +today.getFullYear()+"-"+today.getMonth()+1+"-"+today.getDate() + "<br>";
+                let yesterday = new Date();
+                yesterday.setDate(today.getDate()-1);
+                ele.innerHTML += "昨日は、" +yesterday.getFullYear()+"-"+yesterday.getMonth()+1+"-"+yesterday.getDate()+"<br>";
+                let tommorow = new Date();
+                tommorow.setDate(today.getDate()+1);
+                ele.innerHTML +="明日は、"+tommorow.getFullYear()+"-"+tommorow.getMonth()+1+"-"+tommorow.getDate();
+            })
+        </script>
+    </body>
+</html>

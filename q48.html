@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q48-</title>
+    </head>
+    <body>
+        <h1>Q48</h1>
+        <span>
+            アルファベットの大文字からなる、ランダムな１０文字の文字列を作成
+            してください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML = "";
+                let myAlpha = [];
+                for (let i=0;i<10;i++){
+                myAlpha.push(String.fromCodePoint(Math.floor(Math.random()*26+65)));
+                }
+                ele.innerHTML +=myAlpha.join("");
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q45-</title>
+    </head>
+    <body>
+        <h1>Q45</h1>
+        <span>
+            ある１つの引数を取る関数を作ってください。その数字が、 <br>
+            ３と５のどちらかの倍数だったら、trueを返してください。 <br>
+            そうでなかったら、falseを返してください。 <br>
+            ただし、「and条件で作る関数」と「or条件で作る関数」の２つを考えてみてください。 <br>
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML="";
+                function checkMultiple1(number){
+                    if(number%3==0 || number%5==0){
+                    return true;
+                    }
+                    return false;
+                }
+                
+                ele.innerHTML += "checkMultiple1(9);" +checkMultiple1(9)+"<br>"
+                ele.innerHTML += "checkMultiple1(10);" +checkMultiple1(10)+"<br>"
+                ele.innerHTML += "checkMultiple1(14);" +checkMultiple1(14)+"<br>"
+                ele.innerHTML += "checkMultiple1(15);" +checkMultiple1(15)+"<br>"
+                ele.innerHTML += "checkMultiple1(30);" +checkMultiple1(30)+"<br>"
+                function checkMultiple2(number){
+                    if(!(number%3!=0 && number%5!=0)){
+                    return true;
+                    }
+                    return false;
+                }
+                
+                ele.innerHTML += "<br><br>checkMultiple2(9);" +checkMultiple2(9)+"<br>"
+                ele.innerHTML += "checkMultiple2(10);" +checkMultiple2(10)+"<br>"
+                ele.innerHTML += "checkMultiple2(14);" +checkMultiple2(14)+"<br>"
+                ele.innerHTML += "checkMultiple2(15);" +checkMultiple2(15)+"<br>"
+                ele.innerHTML += "checkMultiple2(30);" +checkMultiple2(30)+"<br>"
+                            })
+                    
+        </script>
+    </body>
+</html>
