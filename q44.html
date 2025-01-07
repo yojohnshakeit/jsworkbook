@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q44-</title>
+    </head>
+    <body>
+        <h1>Q44</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let fruits = ["apple", "apple", "orange", "orange", "mango", "mango", "mango", "mango"]; <br>
+            ・配列内にある同じ要素数をカウントして、Mapにして出力してください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML= "";
+                let fruits = ["apple", "apple", "orange", "mango", "mango", "mango", "mango"];
+                let arraySet = new Set(fruits);
+                let myMap = new Map();
+                //let fruitCount = 0;
+                for(let myfruit of Array.from(arraySet)){
+                    let fruitCount = 0;  
+                    for(let fruit of fruits){
+                        if(myfruit == fruit){
+                        fruitCount+=1;
+                        }
+                    }
+                    myMap.set(myfruit,fruitCount);
+                }
+                /*another ---answer---
+                let mapFruits = new Map();
+                let current_num = 0;
+                for(let fruit of fruits){
+                    if(mapFruits.has(fruit)){
+                        current_num = mapFruits.get(fruit);
+                    } else {
+                        current_num = 0;
+                    }
+                    mapFruits.set(fruit, current_num+1);
+                }
+                */
+                    for(let [key, value] of myMap.entries()){
+                        ele.innerHTML += `${key}:${value} -`
+                    }
+            });
+        </script>
+    </body>
+</html>

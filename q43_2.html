@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q43-</title>
+    </head>
+    <body>
+        <h1>Q43_2</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            [{"apple":100, "orange":50, "mango":30},  <br>
+            {"apple":200, "orange":250, "mango":230}, <br>
+            {"apple":300, "orange":350, "mango":330}, ];  <br>
+            ・keyがappleのvalueを合計してください。 <br>
+            （オブジェクトリテラルを使用)
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML="";
+                let myBasket = [{"apple":100, "orange":50, "mango":30}, 
+            {"apple":200, "orange":250, "mango":230}, 
+            {"apple":300, "orange":350, "mango":330}, ];
+                let amountApple = 0;
+                for(let basket of myBasket){
+                    amountApple +=basket.apple
+                }
+                ele.innerHTML += amountApple;
+                 
+            })
+        </script>
+    </body>
+</html>
