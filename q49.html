@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jsworkbook -q49-</title>
+    </head>
+    <body>
+        <h1>Q49</h1>
+        <span>
+            以下の配列が対象です。 <br>
+            let person = [{"name":"Taro1", "age":20, "height":180, "weight":60}, {"name":"Taro2", "age":40,”height":160,"weight":70},
+            {"name":"Taro3", "age":50, "height":150, "weight":75}];  <br>
+            この配列データを使って、name, age そしてBMIを表示してください。
+        </span>
+        <h2>---answer---</h2>
+        <output></output>
+        <script>
+            window.addEventListener("load", ()=>{
+                let ele = document.getElementsByTagName("output")[0];
+                ele.innerHTML = "";
+                let person 
+                = [{"name":"Taro1","age":20,"height":180,"weight":60},{"name":"Taro2","age":40,"height":160,"weight":70}
+                ,{"name":"Taro3", "age":50, "height":150, "weight":75}];
+                
+                function bmi(height, weight){
+                    let mHeight = height/100;
+                    return weight/mHeight/mHeight;
+                }
+                
+                for(let man of person){
+                    ele.innerHTML+= "<br>name:" + man.name + " age:"+man.age+ " BMI:" +bmi(man.height, man.weight).toFixed(1);
+                }
+            })
+        </script>
+    </body>
+</html>
